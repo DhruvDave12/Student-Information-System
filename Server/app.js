@@ -1,20 +1,11 @@
-require('dotenv').config();
-const mysql = require('mysql2');
+const express  = require('express');
+const app = express();
+const PORT = 3000;
+const studentRoutes = require('./routes/student.routes');
 
-const connection = mysql.createConnection({
-    host:'localhost',
-    port: 3306,
-    database: 'studentinfosys',
-    user: 'root', 
-    password: 'dhruvd1201'
-});
+app.use('/', studentRoutes);
 
 
-connection.connect(function (err) {
-    if(err){
-        console.log("Error in connecting the database");
-    }
-    else{
-        console.log("Connected Successfully");
-    }
- });
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
+})

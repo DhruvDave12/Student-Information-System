@@ -62,7 +62,7 @@ module.exports.loginUser = async (req, res) => {
         success: true,
         data: {
           isLoggedIn: true,
-          userType: 'student',
+          userType: 'faculty',
           userData: newRes[0][0],
         },
       });

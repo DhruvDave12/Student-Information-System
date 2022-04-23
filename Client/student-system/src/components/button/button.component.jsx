@@ -1,11 +1,11 @@
 import React from "react";
 import './button.styles.css';
 
-const Button = ({children, ...otherProps}) => {
+const Button = ({children}) => {
     return(
-        <div className="btn" {...otherProps}>
+        <button className="btn" type="submit">
             {children}
-        </div>
+        </button>
     )
 }
 

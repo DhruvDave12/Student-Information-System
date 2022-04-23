@@ -1,5 +1,5 @@
 .navbar {
-    height: 12vh;
+    height: 10vh;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -16,12 +16,13 @@
 }
 
 .name-logo img {
+    margin-top: 4px;
     height: 12vh;
     width: 12vw;
 }
 
 .nav-wrap {
-    width: 40%;
+    width: 35%;
     display: flex;
     margin-right: 40px;
     justify-content: space-between;

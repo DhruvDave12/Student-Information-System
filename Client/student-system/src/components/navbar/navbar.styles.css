@@ -1,3 +1,40 @@
-.nav{
-    background-color: aqua;
+.navbar {
+    height: 10vh;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px gray;
+    background-color: white;
+}
+
+.name-logo {
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-logo img {
+    margin-top: 4px;
+    height: 12vh;
+    width: 12vw;
+}
+
+.nav-wrap {
+    width: 35%;
+    display: flex;
+    margin-right: 40px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.link {
+    text-decoration: none;
+}
+
+p {
+    font-size: 15px;
+    font-family: Inter-Light;
+    color: black;
 }

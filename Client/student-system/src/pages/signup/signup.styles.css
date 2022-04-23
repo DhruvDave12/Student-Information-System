@@ -93,13 +93,13 @@
 .sign-radio {
     height: 15px;
     width: 15px;
+    accent-color: red;
 }
 
 .user-check {
     font-family: Inter-Light;
     font-size: 18px;
     margin-left: 4px;
-    color: gray;
 }
 
 .have-account {

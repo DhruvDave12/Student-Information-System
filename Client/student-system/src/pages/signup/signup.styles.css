@@ -1,0 +1,121 @@
+.signup {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* background-image: linear-gradient(to right, rgb(255, 193, 0, 0.2), white); */
+}
+
+/*--------------------------------------------------------------------------------*/
+
+.sign-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.sign-img img {
+    width: 70vw;
+    height: 70vh;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+.sign-wrap {
+    height: 100%;
+    width: 60%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+}
+
+.form-wrap-sign {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn-div {
+    width: 70%;
+}
+
+.btn-div .btn {
+    background-color: rgb(255, 193, 0);
+}
+
+.btn-div .btn:hover {
+    background-color: rgb(11, 32, 36);
+    color: white;
+}
+
+.form-div {
+    width: 70%;
+    margin-right: 40px;
+    margin-bottom: 8px;
+}
+
+.signup-title {
+    font-family: Inter-Light;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.sign-check {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.col-check {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.sign-radio {
+    height: 15px;
+    width: 15px;
+}
+
+.user-check {
+    font-family: Inter-Light;
+    font-size: 18px;
+    margin-left: 4px;
+    color: gray;
+}
+
+.have-account {
+    font-family: Inter-Regular;
+    font-size: 12px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.link-log {
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.link-log p {
+    color: rgb(255, 193, 0);
+    font-family: Inter-Regular;
+}

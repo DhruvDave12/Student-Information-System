@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div className="login">
-            <div className="inner-wrap">
-                <div className="form-wrap">
+            <div className="login-wrap">
+                <div className="form-wrap-login">
                     <p className="login-title">Login</p>
                     <Form label={"Email address"}
                         type={"text"}
@@ -22,11 +22,13 @@ const Login = () => {
                         name={"password"}
                         placeholder={"your password"} />
                     <br />
-                    <div className="check">
-                        <input type="checkbox" className="box" />
+                    <div className="log-check">
+                        <input type="checkbox" className="log-box" />
                         <p className="remember">Remember Password</p>
                     </div>
-                    <Button type="submit">Login</Button>
+                    <div className="btn-log-div">
+                        <Button type="submit">Login</Button>
+                    </div>
                     <div className="not-account">
                         <p>Don't have an account? </p>
                         <Link to={'/signup'} className='link-sign' ><p>Sign up</p></Link>

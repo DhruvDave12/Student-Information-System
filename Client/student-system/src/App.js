@@ -6,9 +6,9 @@ import Login from './pages/login/login.component';
 import SignUp from './pages/signup/signup.component';
 import StudentData from './pages/student-data/student-data.component';
 import StudentProfile from './pages/student-profile/student_profile.component';
+import FacultyProfile from './pages/faculty-data/faculty_profile.component';
 
 function App() {
-  localStorage.setItem('LoginStatus', false);
   return (
     <div className="App">
       <NavBar />
@@ -18,6 +18,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/info' element={<StudentData />}/>
         <Route path='/student/:id' element = {<StudentProfile />}/>
+        <Route path='/faculty/:id' element = {<FacultyProfile />}/>
       </Routes>
     </div>
   );

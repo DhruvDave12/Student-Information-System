@@ -25,8 +25,6 @@ const SignUp = () => {
       type: type,
     });
     setRegState(res.data);
-    localStorage.setItem('LoginStatus', res.data.isLoggedIn);
-
     navigate("/info", {
       state: {
         email: res.data.email

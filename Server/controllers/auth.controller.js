@@ -21,7 +21,7 @@ module.exports.registerUser = (req, res) => {
       res.status (200).send ({
         success: true,
         isLoggedIn: true,
-        email: email
+        email: email,
       });
     }
   );

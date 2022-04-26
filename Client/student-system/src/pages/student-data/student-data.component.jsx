@@ -21,7 +21,7 @@ const StudentData = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        await axios.post('http://localhost:3000/student/extra/data', {
+        const res = await axios.post('http://localhost:3000/student/extra/data', {
             email: state.email,
             first_name: firstName,
             middle_name: middleName,
@@ -32,7 +32,7 @@ const StudentData = () => {
             student_id: studentID,
             dob: dob
         })
-
+        localStorage.setItem('id', res.data.userData.student_id);
         navigate(`/student/${studentID}`);
     }
     return (

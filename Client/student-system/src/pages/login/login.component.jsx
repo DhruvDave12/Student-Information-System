@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './login.styles.css';
 import Form from "../../components/form/form.components";
 import LogImg from "../../assets/images/login-base.svg";
 import Button from "../../components/button/button.component";
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const onClickHandler = async (e) => {
+        e.preventDefault();
+        const res = await axios.post("http://localhost:3000/login", {
+            email,
+            password
+        })
+        if(res.data.data.userType === "student"){
+            localStorage.setItem('id', res.data.data.userData.student_id);
+            navigate(`/student/${res.data.data.userData.student_id}`);
+        }
+        else if(res.data.data.userType === "faculty"){
+            localStorage.setItem('id', res.data.data.userData.faculty_id);
+            navigate(`/faculty/${res.data.data.userData.faculty_id}`);
+        }
+    }
+
     return (
         <div className="login">
             <div className="login-wrap">
@@ -14,12 +37,15 @@ const Login = () => {
                     <Form label={"Email address"}
                         type={"text"}
                         name={"username"}
-                        placeholder={"something@email.com"} />
+                        placeholder={"something@email.com"} 
+                        setterFunction={setEmail}
+                        />
                     <br />
                     <Form
                         label={"Password"}
                         type={"password"}
                         name={"password"}
+                        setterFunction={setPassword}
                         placeholder={"your password"} />
                     <br />
                     <div className="log-check">
@@ -27,7 +53,7 @@ const Login = () => {
                         <p className="remember">Remember Password</p>
                     </div>
                     <div className="btn-log-div">
-                        <Button type="submit">Login</Button>
+                        <Button type="submit" onClickHandler={onClickHandler}>Login</Button>
                     </div>
                     <div className="not-account">
                         <p>Don't have an account? </p>

@@ -11,6 +11,8 @@ import InternshipDataForm from './pages/internship-dataform/internship-data-form
 import StudentData from './pages/student-data/student-data.component';
 import StudentProfile from './pages/student-profile/student_profile.component';
 import FacultyProfile from './pages/faculty-data/faculty_profile.component';
+import CurricularDataForm from './pages/curricular-dataform/curricular-data-form.component';
+import CourseDataForm from './pages/courses-dataform/courses-data-form.component';
 
 function App() {
   return (
@@ -24,9 +26,11 @@ function App() {
         <Route path='/faculty-dataform' element={<FacultyDataForm />} />
         <Route path='/academics-dataform' element={<AcademicsDataForm />} />
         <Route path='/internship-dataform' element={<InternshipDataForm />} />
-        <Route path='/info' element={<StudentData />}/>
-        <Route path='/student/:id' element = {<StudentProfile />}/>
-        <Route path='/faculty/:id' element = {<FacultyProfile />}/>
+        <Route path='/curricular-dataform' element={<CurricularDataForm />} />
+        <Route path='/course-dataform' element={<CourseDataForm />} />
+        <Route path='/info' element={<StudentData />} />
+        <Route path='/student/:id' element={<StudentProfile />} />
+        <Route path='/faculty/:id' element={<FacultyProfile />} />
       </Routes>
     </div>
   );

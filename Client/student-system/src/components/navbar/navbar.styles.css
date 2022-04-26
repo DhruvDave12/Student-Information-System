@@ -38,3 +38,10 @@ p {
     font-family: Inter-Light;
     color: black;
 }
+
+.auth{
+    display: flex;
+    width: 28%;
+    flex-direction: row;
+    justify-content: space-between;
+}

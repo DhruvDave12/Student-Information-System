@@ -5,12 +5,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const authRoutes = require('./routes/auth.routes');
+const studentRoutes = require('./routes/student.routes');
+
 const connection = require('./config/db');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 app.use('/', authRoutes);
+app.use('/', studentRoutes);
 
 app.get('/', (req,res) => {
     res.send("Welcome to Student Information System Backend :)");    

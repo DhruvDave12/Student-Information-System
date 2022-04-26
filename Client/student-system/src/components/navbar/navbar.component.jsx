@@ -39,7 +39,7 @@ const NavBar = () => {
             <p>Profile</p>
           </Link>
         ) : (
-          <div>
+          <div className="auth">
             <Link to={"/signup"} className="link">
               <p>Sign Up</p>
             </Link>

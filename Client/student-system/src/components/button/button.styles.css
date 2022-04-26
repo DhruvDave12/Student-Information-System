@@ -10,6 +10,7 @@
     font-family: Inter-Light;
     text-align: center;
     border-radius: 8px;
+    border:none;
     cursor: pointer;
 }
 

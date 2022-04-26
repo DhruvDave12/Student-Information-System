@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import "./signup.styles.css";
-import SignImg from "../../assets/images/signup-base.svg";
-import Form from "../../components/form/form.components";
-import Button from "../../components/button/button.component";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from 'react';
+import './signup.styles.css';
+import SignImg from '../../assets/images/signup-base.svg';
+import Form from '../../components/form/form.components';
+import Button from '../../components/button/button.component';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {

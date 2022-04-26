@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './signup.styles.css';
 import SignImg from '../../assets/images/signup-base.svg';
 import Form from '../../components/form/form.components';
@@ -13,17 +13,17 @@ const SignUp = () => {
     const [type, setType] = useState('');
     // console.log(email, password, confirmPassword, type);
 
-   
-        const handleClick = async (e)=> {
-            e.preventDefault();
-            const res = await axios.post('http://localhost:3000/register',{
-                email: email,
-                password: password,
-                type: type
-            })
-            console.log(res);
-        }
-        
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+        const res = await axios.post('http://localhost:3000/register', {
+            email: email,
+            password: password,
+            type: type
+        })
+        console.log(res);
+    }
+
     return (
         <div className="signup">
             <div className="sign-img">
@@ -53,11 +53,19 @@ const SignUp = () => {
                     </div>
                     <form className="sign-check">
                         <div className="col-check">
-                            <input type="radio" className="sign-radio" value = 'student' name='type' onChange={e => setType(e.target.value)}/>
+                            <input type="radio"
+                                className="sign-radio"
+                                value='student'
+                                name='type'
+                                onChange={e => setType(e.target.value)} />
                             <p className="user-check">student</p>
                         </div>
                         <div className="col-check">
-                            <input type="radio" className="sign-radio" value = 'faculty' name='type' onChange={e => setType(e.target.value)}/>
+                            <input type="radio"
+                                className="sign-radio"
+                                value='faculty'
+                                name='type'
+                                onChange={e => setType(e.target.value)} />
                             <p className="user-check">faculty</p>
                         </div>
                     </form>

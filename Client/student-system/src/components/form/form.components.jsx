@@ -6,8 +6,7 @@ const Form = ({ label, type, name, placeholder, setterFunction }) => {
         <div className="field">
             <div className='form'>
                 <label for={name} className='label-field'>{label}</label>
-                <br />
-                <input type={type} onChange = {e=>setterFunction(e.target.value)} className='input-field' placeholder={placeholder} required/>
+                <input type={type} onChange={e => setterFunction(e.target.value)} className='input-field' placeholder={placeholder} required />
             </div>
         </div>
     )

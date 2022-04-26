@@ -27,7 +27,7 @@ const Login = () => {
                         <p className="remember">Remember Password</p>
                     </div>
                     <div className="btn-log-div">
-                        <Button type="submit">Login</Button>
+                        <Button>Login</Button>
                     </div>
                     <div className="not-account">
                         <p>Don't have an account? </p>

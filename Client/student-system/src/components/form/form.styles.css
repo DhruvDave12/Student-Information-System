@@ -19,7 +19,6 @@
 }
 
 .input-field {
-    min-width: 100%;
     width: 100%;
     height: 40px;
     border-radius: 8px;
@@ -32,4 +31,15 @@
 ::placeholder {
     color: black;
     opacity: 0.3;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }

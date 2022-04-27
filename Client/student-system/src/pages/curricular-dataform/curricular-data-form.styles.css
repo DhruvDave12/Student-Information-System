@@ -1,0 +1,73 @@
+.curricular-data-form {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.curricular-data-form-wrap {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.curricular-col-form-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 14px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.comm-div {
+    width: 45%;
+}
+
+.id-div {
+    width: 45%;
+}
+
+.club-div {
+    width: 45%;
+}
+
+.event-div {
+    width: 45%;
+}
+
+.curricular-heading {
+    font-family: Inter-Regular;
+    font-size: 29px;
+    letter-spacing: 1.8px;
+    margin-bottom: 35px;
+}
+
+.declare-check {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.declare-box {
+    margin-right: 10px;
+}
+
+.declare {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.curricular-btn-form-div {
+    width: 95%;
+    display: flex;
+    margin-top: 30px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

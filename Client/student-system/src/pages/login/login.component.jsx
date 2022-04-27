@@ -21,11 +21,15 @@ const Login = () => {
         })
         if(res.data.data.userType === "student"){
             localStorage.setItem('id', res.data.data.userData.student_id);
+            localStorage.setItem('type', res.data.data.userType);
             navigate(`/student/${res.data.data.userData.student_id}`);
+            window.location.reload(false);
         }
         else if(res.data.data.userType === "faculty"){
             localStorage.setItem('id', res.data.data.userData.faculty_id);
+            localStorage.setItem('type', res.data.data.userType);
             navigate(`/faculty/${res.data.data.userData.faculty_id}`);
+            window.location.reload(false);
         }
     }
 

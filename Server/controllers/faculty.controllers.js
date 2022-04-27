@@ -20,19 +20,21 @@ module.exports.getAllFaculties = (req,res) => {
 
 module.exports.getParticularFaculty = (req,res) => {
     const { id } = req.params;
-    
-    const query = "SELECT * FROM faculty where faculty_id = ?";
-    connection.query(query, [id], (err,rows,fields) => {
+
+    const query = `SELECT * FROM faculty where faculty_id = ${id}`;
+    connection.query(query, (err,rows,fields) => {
         if(rows) {
             res.status(200).send({
                 success: true,
                 data: rows
             })
         }
-        res.status(403).send({
-            success: false,
-            msg: "No faculty found. Please enter correct ID"
-        })
+        else{
+            res.status(403).send({
+                success: false,
+                msg: "No faculty found. Please enter correct ID"
+            })
+        }
     })
 }
 
@@ -52,6 +54,36 @@ module.exports.deleteAStudent = (req,res) => {
             res.status(403).send({
                 success: false,
                 msg: "Error while deleting a user"
+            })
+        }
+    })
+}
+
+module.exports.postExtraData = (req,res) => {
+    const {first_name, middle_name, last_name, faculty_id, contact, email} = req.body;
+
+    const facData = {
+        first_name,
+        middle_name,
+        last_name,
+        faculty_id, 
+        contact,
+        email
+    }
+
+    console.log(facData);
+    const query = 'INSERT INTO FACULTY (faculty_id, first_name, middle_name, last_name, email, contact) values (?, ?, ?, ?, ?, ?)';
+    connection.query(query, [faculty_id, first_name, middle_name, last_name, email, contact], (err,rows,fields) => {
+        if(rows){
+            res.status(200).send({
+                success: true,
+                data: facData
+            })
+        }
+        else{
+            res.status(403).send({
+                success: false,
+                msg: "Error in inserting faculty"
             })
         }
     })

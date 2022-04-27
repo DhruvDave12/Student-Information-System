@@ -15,7 +15,7 @@ router.post('/student/extra/data', studentController.postExtraData);
 // @desc UPDATE A STUDENT
 // @route POST
 // @path /student/update
-router.post('/student/update', studentController.updateStudent);
+router.post('/student/update/:id', studentController.updateStudent);
 
 // @desc GET PARTICULAR STUDENT USING AN ID
 // @route GET

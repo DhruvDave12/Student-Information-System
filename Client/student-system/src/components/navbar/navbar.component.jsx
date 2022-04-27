@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./navbar.styles.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/StudentInfoSys.svg";
-
+import { useNavigate } from "react-router-dom";
 const NavBar = () => {
+    const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(false);
     const [idInLS, setIdInLS] = useState();
     useEffect(() => {
@@ -16,12 +17,33 @@ const NavBar = () => {
         
     }, [idInLS])
 
+    const typeOfUser = localStorage.getItem('type');
+
+    const handleSignOut = () => {
+      localStorage.removeItem('id');
+      localStorage.removeItem('type');
+
+      navigate('/');
+      window.location.reload(false);
+    }
     return (
     <div className="navbar">
       <div className="name-logo">
         <img src={logo} alt="StudentInfoSys" />
       </div>
       <nav className="nav-wrap">
+        {
+          isLogin && typeOfUser === "faculty" ? 
+          <Link to={'/students/all'} className="link">All Students</Link>
+          :
+          ""
+        }
+        {
+          isLogin && typeOfUser === "student" ? 
+          <Link to={'/faculties/all'} className="link">All Faculties</Link>
+          :
+          ""
+        }
         <Link to={"/filter"} className="link">
           <p>Filter</p>
         </Link>
@@ -35,9 +57,14 @@ const NavBar = () => {
           <p>Contact</p>
         </Link>
         {isLogin ? (
-          <Link to={`/profile/${idInLS}`} className="link">
-            <p>Profile</p>
-          </Link>
+          <div className="auth">
+            <Link to={typeOfUser === "student" ? `/student/${idInLS}` : `/faculty/${idInLS}`} className="link">
+              <p>Profile</p>
+            </Link>
+            <div className="link" style={{cursor: "pointer"}} onClick={handleSignOut}>
+              <p>Sign out</p>
+            </div>
+          </div>
         ) : (
           <div className="auth">
             <Link to={"/signup"} className="link">

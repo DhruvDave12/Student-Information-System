@@ -10,16 +10,21 @@ import AcademicsDataForm from './pages/academics-dataform/academics-data-form.co
 import InternshipDataForm from './pages/internship-dataform/internship-data-form.component';
 import CurricularDataForm from './pages/curricular-dataform/curricular-data-form.component';
 import CourseDataForm from './pages/courses-dataform/courses-data-form.component';
-import StudentData from './pages/student-data/student-data.component';
 import FacultyProfile from './pages/faculty-data/faculty_profile.component';
 import StudentProfile from './pages/student-profile/student_profile.component';
-import TeamData from './components/teamdata/teamdata.component';
 import Team from './pages/team/team.component';
+import AllStudents from './pages/all-students/all_student.component';
+import ParticularAcademic from './pages/particular-academic/particular_academic.component';
+import EditAcademics from './pages/edit-academics/edit_academics.component';
+import EditStudentPage from './pages/edit-student/edit_student.component';
+import Courses from './pages/courses/courses.component';
+import AllFaculties from './pages/all-faculty/all_faculty.component';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
@@ -29,13 +34,18 @@ function App() {
         <Route path='/faculty-dataform' element={<FacultyDataForm />} />
         <Route path='/academics-dataform' element={<AcademicsDataForm />} />
         <Route path='/internship-dataform' element={<InternshipDataForm />} />
-        <Route path='/curricular-dataform' element={<CurricularDataForm />} />
-        <Route path='/course-dataform' element={<CourseDataForm />} />
-        <Route path='/teamdata' element={<TeamData />} />
-        <Route path='/info' element={<StudentData />} />
+        <Route path='/students/all' element={<AllStudents />} />
+        <Route path='/academics/:id' element={<ParticularAcademic />} />
         <Route path='/student/:id' element={<StudentProfile />} />
         <Route path='/faculty/:id' element={<FacultyProfile />} />
+        <Route path='/academics/edit' element={<EditAcademics />} />
+        <Route path='/student/edit' element={<EditStudentPage />} />
+        <Route path='/curricular-dataform' element={<CurricularDataForm />} />
+        <Route path='/course-dataform' element={<CourseDataForm />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/faculties/all' element={<AllFaculties />} />
       </Routes>
+
     </div>
   );
 }

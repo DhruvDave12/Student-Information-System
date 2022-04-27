@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './courses-data-form.styles.css';
 import Form from '../../components/form/form.components';
 import Button from '../../components/button/button.component';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const CourseDataForm = () => {
+    const navigate = useNavigate();
+
+    const [facultyID, setFacultyID] = useState('');
+    const [semester, setSemester] = useState('');
+    const [course, setCourse] = useState('');
+    const [credit, setCourseCredit] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        await axios.post('http://localhost:3000/course/data', {
+            faculty_id: facultyID,
+            course_id: course,
+            semester: semester,
+            credits: credit,
+        })
+        
+        navigate('/courses');   
+    }
     return(
         <div className="courses-data-form">
             <form className="courses-data-form-wrap">
@@ -14,13 +35,13 @@ const CourseDataForm = () => {
                             type={"number"}
                             name={"facId"}
                             placeholder={""}
-                            setterFunction={{}} />
+                            setterFunction={setFacultyID} />
                     </div>
                     <div className="sem-div">
                         <Form label={"Semester"}
                             type={"number"}
                             name={"sem"}
-                            setterFunction={{}} />
+                            setterFunction={setSemester} />
                     </div>
                 </div>
                 <div className="courses-col-form-wrap">
@@ -29,14 +50,14 @@ const CourseDataForm = () => {
                             type={"text"}
                             name={"course"}
                             placeholder={"XY123"}
-                            setterFunction={{}} />
+                            setterFunction={setCourse} />
                     </div>
                     <div className="credit-div">
                         <Form label={"Course Credits"}
-                            type={"number"}
+                            type={"text"}
                             name={"credits"}
                             placeholder={"$ - $ - $ - $"}
-                            setterFunction={{}} />
+                            setterFunction={setCourseCredit} />
                     </div>
                 </div>
                 <div className="declare-check">
@@ -44,7 +65,7 @@ const CourseDataForm = () => {
                     <p className="declare">I, hereby confirm that all the details provided by me are correct to best of my knowledge.</p>
                 </div>
                 <div className="courses-btn-form-div">
-                    <Button>Submit</Button>
+                    <Button onClickHandler={handleSubmit}>Submit</Button>
                 </div>
             </form>
         </div>

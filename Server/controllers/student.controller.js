@@ -9,10 +9,12 @@ module.exports.getAllStudents = (req, res) => {
         data: rows,
       });
     }
-    res.status (403).send ({
-      success: false,
-      data: 'Database is empty',
-    });
+    else{
+      res.status (403).send ({
+        success: false,
+        data: 'Database is empty',
+      });
+    }
   });
 };
 
@@ -92,6 +94,7 @@ module.exports.postExtraData = (req, res) => {
 };
 
 module.exports.updateStudent = (req, res) => {
+  const {id} = req.params;
   const {
     first_name,
     last_name,
@@ -100,11 +103,10 @@ module.exports.updateStudent = (req, res) => {
     major,
     dob,
     batch,
-    student_id,
+    email
   } = req.body;
-
   const query =
-    'UPDATE STUDENT SET first_name = ?, last_name = ?, middle_name = ?, contact = ?, major = ?, dob = ?, batch = ? WHERE student_id = ?';
+    'UPDATE student set first_name = ?, last_name = ?, middle_name = ?, contact = ?, major = ?, dob = ?, batch = ?, email = ? WHERE student_id = ?';
   connection.query (
     query,
     [
@@ -115,16 +117,17 @@ module.exports.updateStudent = (req, res) => {
       major,
       dob,
       batch,
-      student_id,
+      email,
+      id
     ],
     (err, rows, fields) => {
       if (rows) {
-        res.status (200).send ({
+        res.status(200).send({
           success: true,
           msg: 'Data updated',
         });
       } else {
-        res.status (403).send ({
+        res.status(403).send({
           success: false,
           msg: 'Error occured while updating the data',
         });

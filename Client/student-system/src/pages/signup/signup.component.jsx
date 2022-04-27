@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './signup.styles.css';
-import SignImg from '../../assets/images/signup-base.svg';
-import Form from '../../components/form/form.components';
-import Button from '../../components/button/button.component';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./signup.styles.css";
+import SignImg from "../../assets/images/signup-base.svg";
+import Form from "../../components/form/form.components";
+import Button from "../../components/button/button.component";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -17,6 +17,7 @@ const SignUp = () => {
 
   const [regState, setRegState] = useState("");
 
+  console.log(email);
   const handleClick = async (e) => {
     e.preventDefault();
     const res = await axios.post("http://localhost:3000/register", {
@@ -25,11 +26,23 @@ const SignUp = () => {
       type: type,
     });
     setRegState(res.data);
-    navigate("/info", {
-      state: {
-        email: res.data.email
-      },
-    });
+    if (type === "student") {
+      localStorage.setItem('type', type);
+      navigate("/student-dataform", {
+        state: {
+          email: res.data.email,
+        },
+      });
+      window.location.reload(false);
+    } else {
+      localStorage.setItem('type', type);
+      navigate("/faculty-dataform", {
+        state: {
+          email: res.data.email,
+        },
+      });
+      window.location.reload(false);
+    }
   };
 
   return (

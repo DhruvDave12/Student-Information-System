@@ -14,6 +14,9 @@ import StudentProfile from './pages/student-profile/student_profile.component';
 import FacultyProfile from './pages/faculty-data/faculty_profile.component';
 import EditAcademics from './pages/edit-academics/edit_academics.component';
 import EditStudentPage from './pages/edit-student/edit_student.component';
+import CurricularDataForm from './pages/curricular-dataform/curricular-data-form.component';
+import CourseDataForm from './pages/courses-dataform/courses-data-form.component';
+
 function App() {
   return (
     <div className="App">
@@ -32,6 +35,11 @@ function App() {
         <Route path='/faculty/:id' element = {<FacultyProfile />}/>
         <Route path='/academics/edit' element={<EditAcademics />}/>
         <Route path='/student/edit' element={<EditStudentPage />}/>
+        <Route path='/curricular-dataform' element={<CurricularDataForm />} />
+        <Route path='/course-dataform' element={<CourseDataForm />} />
+        <Route path='/info' element={<StudentData />} />
+        <Route path='/student/:id' element={<StudentProfile />} />
+        <Route path='/faculty/:id' element={<FacultyProfile />} />
       </Routes>
     </div>
   );

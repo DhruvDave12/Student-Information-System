@@ -3,8 +3,11 @@ import React, { useEffect } from "react";
 import "./all_student.styles.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "../../components/button/button.component";
+import { useNavigate } from "react-router-dom";
 
 const AllStudents = () => {
+    const navigate = useNavigate();
     const [allStudents, setAllStudents] = useState([]);
 
     useEffect(() => {
@@ -15,6 +18,12 @@ const AllStudents = () => {
         getAllStudents();
     }, []);
 
+    const handleDeleteStudent = async (id) => {
+        await axios.post(`http://localhost:3000/faculty/delete/student/${id}`);
+        navigate('/students/all');
+        window.location.reload(false);
+    }
+
     return (
         <div className="all__students">
             {
@@ -24,13 +33,16 @@ const AllStudents = () => {
                 <div>
                     {
                         allStudents.map(student => (
-                            <Link to={`/student/${student.student_id}`}>
-                                <div className="particular_student" >
-                                    <p>{student.first_name}</p>
-                                    <p>{student.middle_name}</p>
-                                    <p>{student.last_name}</p>
-                                </div>
-                            </Link>
+                            <div>
+                                <Link to={`/student/${student.student_id}`}>
+                                    <div className="particular_student" >
+                                        <p>{student.first_name}</p>
+                                        <p>{student.middle_name}</p>
+                                        <p>{student.last_name}</p>
+                                    </div>
+                                </Link>
+                                <Button onClickHandler={() => {handleDeleteStudent(student.student_id)}}>Delete</Button>
+                            </div>
                         ))
                     }
                 </div>

@@ -3,8 +3,10 @@ import './academics-data-form.styles.css';
 import Form from "../../components/form/form.components";
 import Button from "../../components/button/button.component";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AcademicsDataForm = () => {
+    const navigate = useNavigate();
 
     const [studentID, setStudentID] = useState('');
     const [backlog, setBacklog] = useState('');
@@ -12,7 +14,6 @@ const AcademicsDataForm = () => {
     const [currentSPI, setCurrentSPI] = useState('');
 
     const handleSubmitAcademics = async (e) => {
-        // console.log(studentID, backlog, cpi, currentSPI);
         e.preventDefault();
         const res = await axios.post('http://localhost:3000/academics/data', {
             student_id: studentID,
@@ -21,7 +22,8 @@ const AcademicsDataForm = () => {
             spi: currentSPI
         });
 
-        console.log(res);
+        navigate(`/academics/${studentID}`);
+        window.location.reload(false);
     }
 
     return (

@@ -11,6 +11,7 @@ const StudentProfile = () => {
 
     const [student, setStudent] = useState();
     const [internData, setInternData] = useState();
+    const [curricularData, setCurricularData] = useState();
 
     const typeOfUser = localStorage.getItem('type');
     useEffect(() => {
@@ -22,8 +23,13 @@ const StudentProfile = () => {
             const res = await axios.get(`http://localhost:3000/internship/${params.id}`);
             setInternData(res.data.data);
         }
+        const getCurricular = async () => {
+            const res = await axios.get(`http://localhost:3000/curricular/${params.id}`)
+            setCurricularData(res.data.data);
+        }   
         getProfile();
         getInternData();
+        getCurricular();
     }, [])
 
     const sendToEditPage = () => {
@@ -69,10 +75,37 @@ const StudentProfile = () => {
                 </div>
             }
             {
+                curricularData ?
+                <div>
+                    <br />
+                    <br />
+                    <p>{curricularData.committee}</p>
+                    <p>{curricularData.clubs}</p>
+                    <p>{curricularData.events}</p>
+                </div>
+                :
+                <div>
+                    <br />
+                    <br />
+                    GET A CURRICULAR 
+                </div>
+            }
+            {
                 typeOfUser === "student" ? 
-                <Link to={'/internship-dataform'}>Add Internship</Link>
+                <Link to={'/internship-dataform'}>Add Internship <br /></Link>
                 :
                 ""
+            }
+            {
+                typeOfUser === "student" ? 
+                <Link to={'/curricular-dataform'}>Add Curricular <br /></Link>
+                :
+                ""
+            }
+            {
+                typeOfUser === "faculty" ?
+                <Link to={'/academics-dataform'}>Add Academics <br /></Link>
+                : ""
             }
             <Link to={`/academics/${student.student_id}`}>Show Academics</Link>
         </div>

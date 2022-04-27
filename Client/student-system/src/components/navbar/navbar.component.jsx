@@ -32,6 +32,18 @@ const NavBar = () => {
         <img src={logo} alt="StudentInfoSys" />
       </div>
       <nav className="nav-wrap">
+        {
+          isLogin && typeOfUser === "faculty" ? 
+          <Link to={'/students/all'} className="link">All Students</Link>
+          :
+          ""
+        }
+        {
+          isLogin && typeOfUser === "student" ? 
+          <Link to={'/faculties/all'} className="link">All Faculties</Link>
+          :
+          ""
+        }
         <Link to={"/filter"} className="link">
           <p>Filter</p>
         </Link>
@@ -44,15 +56,9 @@ const NavBar = () => {
         <Link to={"/contact"} className="link">
           <p>Contact</p>
         </Link>
-        {
-          isLogin && typeOfUser === "faculty" ? 
-          <Link to={'/students/all'} className="link">All Students</Link>
-          :
-          ""
-        }
         {isLogin ? (
           <div className="auth">
-            <Link to={`/profile/${idInLS}`} className="link">
+            <Link to={typeOfUser === "student" ? `/student/${idInLS}` : `/faculty/${idInLS}`} className="link">
               <p>Profile</p>
             </Link>
             <div className="link" style={{cursor: "pointer"}} onClick={handleSignOut}>

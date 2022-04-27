@@ -15,7 +15,7 @@ router.post('/faculty/extra/data', facultyController.postExtraData)
 // @desc DELETE A PARTICULAR STUDENT
 // @path DELETE
 // @route /faculty/delete/student/:id
-router.delete('/faculty/delete/student/:id', facultyController.deleteAStudent);
+router.post('/faculty/delete/student/:id', facultyController.deleteAStudent); 
 
 // @desc GET PARTICULAR FACULTY
 // @path GET

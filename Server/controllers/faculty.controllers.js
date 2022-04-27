@@ -2,7 +2,6 @@ const connection = require("../config/db");
 
 module.exports.getAllFaculties = (req,res) => {
     const query = "SELECT * FROM faculty";
-
     connection.query(query, (err,rows,fields) => {
         if(rows){
             res.status(200).send({
@@ -10,10 +9,12 @@ module.exports.getAllFaculties = (req,res) => {
                 data: rows
             })
         }
-        res.status(403).send({
-            success: false,
-            msg: "No faculty exists"
-        })
+        else {
+            res.status(403).send({
+                success: false,
+                msg: "No faculty exists"
+            })
+        }
     })
 }
 
@@ -41,9 +42,9 @@ module.exports.getParticularFaculty = (req,res) => {
 module.exports.deleteAStudent = (req,res) => {
     const { id } = req.params;
 
-    const query = "DELETE FROM student where student_id = ?";
+    const query = "DELETE FROM academics where student_id = ?; DELETE FROM curricular where student_id = ?; DELETE FROM internship where student_id = ?; DELETE FROM student where student_id = ?;";
 
-    connection.query(query, [id], (err,rows,fields) => {
+    connection.query(query, [id, id, id, id], (err,rows,fields) => {
         if(rows){
             res.status(200).send({
                 success: true,

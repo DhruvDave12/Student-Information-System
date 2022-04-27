@@ -9,17 +9,17 @@ module.exports.postInternship = (req, res) => {
     duration,
     student_id,
   };
+  const query = `INSERT INTO internship (company_name, position, duration, student_id) values (?, ?, ?, ?)`;
 
-  const query = `INSERT INTO internship (company_name, position, duration, student_id) values ("${company_name}", "${position}", "${duration}", "${student_id}")`;
-
-  connection.query (query, (err, rows, fields) => {
+  connection.query (query, [company_name, position, duration, student_id], (err, rows, fields) => {
+    console.log(err);
     if (rows) {
-      res.status (200).send ({
+      res.status(200).send ({
         success: true,
         data: internData,
       });
     } else {
-      res.status (403).send ({
+      res.status(403).send ({
         success: false,
         msg: 'Cannot insert data into internship data',
       });

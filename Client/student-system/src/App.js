@@ -16,11 +16,14 @@ import EditAcademics from './pages/edit-academics/edit_academics.component';
 import EditStudentPage from './pages/edit-student/edit_student.component';
 import CurricularDataForm from './pages/curricular-dataform/curricular-data-form.component';
 import CourseDataForm from './pages/courses-dataform/courses-data-form.component';
+import Courses from './pages/courses/courses.component';
+import AllFaculties from './pages/all-faculty/all_faculty.component';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
@@ -37,10 +40,12 @@ function App() {
         <Route path='/student/edit' element={<EditStudentPage />}/>
         <Route path='/curricular-dataform' element={<CurricularDataForm />} />
         <Route path='/course-dataform' element={<CourseDataForm />} />
-        <Route path='/info' element={<StudentData />} />
         <Route path='/student/:id' element={<StudentProfile />} />
         <Route path='/faculty/:id' element={<FacultyProfile />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/faculties/all' element={<AllFaculties />} />
       </Routes>
+
     </div>
   );
 }

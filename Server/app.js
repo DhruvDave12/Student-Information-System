@@ -9,6 +9,8 @@ const studentRoutes = require('./routes/student.routes');
 const facultyRoutes = require('./routes/faculty.routes');
 const internRoutes = require('./routes/internship.route');
 const academicsRoutes = require('./routes/academics.routes');
+const courseRoutes = require('./routes/course.routes');
+const curricularRoutes = require('./routes/curricular.routes');
 
 require('./config/db');
 app.use(cors());
@@ -20,6 +22,8 @@ app.use('/', studentRoutes);
 app.use('/', facultyRoutes);
 app.use('/', internRoutes);
 app.use('/', academicsRoutes);
+app.use('/', courseRoutes);
+app.use('/', curricularRoutes);
 
 app.get('/', (req,res) => {
     res.send("Welcome to Student Information System Backend :)");    

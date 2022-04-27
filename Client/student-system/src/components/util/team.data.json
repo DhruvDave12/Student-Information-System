@@ -1,0 +1,54 @@
+{
+    "team": [
+        {
+            "id": 1,
+            "name": "Akshat",
+            "position": "FrontEnd Developer",
+            "image": "https://i.imgur.com/Gft2yyt.jpeg",
+            "github": "https://github.com/Akshat0102",
+            "linkedin": "https://www.linkedin.com/in/akshat-khandelwal-118275202/",
+            "insta": "https://instagram.com/oblivion_ineffable",
+            "mail": "mailto:cruise.akshat@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "Dhruv",
+            "position": "BackEnd Developer",
+            "image": "https://i.imgur.com/8f9tmDn.jpeg",
+            "github": "https://github.com/DhruvDave12",
+            "linkedin": "http://www.linkedin.com/in/dhruv1201",
+            "insta": "https://www.instagram.com/_.dhruvdave._/",
+            "mail": "mailto:davedhruv1201@gmail.com"
+        },
+        {
+            "id": 3,
+            "name": "Parth",
+            "position": "User Interface Designer",
+            "image": "https://i.imgur.com/tUYr3c1.jpeg",
+            "github": "https://github.com/ParthChandravadiya",
+            "linkedin": "http://linkedin.com/in/parth-chandravadiya",
+            "insta": "https://instagram.com/parxth.28",
+            "mail": "mailto:parthchandravadiya28@gmail.com"
+        },
+        {
+            "id": 4,
+            "name": "Dhyey",
+            "position": "Team Member",
+            "image": "https://i.imgur.com/lkFzW9L.jpeg",
+            "github": "https://github.com/DhyeySavaliya",
+            "linkedin": "http://linkedin.com/in/dhyey-savaliya",
+            "insta": "https://instagram.com/_dhyey0712_",
+            "mail": "mailto:dhyeysavaliya75@gmail.com"
+        },
+        {
+            "id": 5,
+            "name": "Abhishek",
+            "position": "Team Member",
+            "image": "https://i.imgur.com/P7c1zyM.jpeg",
+            "github": "http://github.com/AIABHISHEK",
+            "linkedin": "https://www.linkedin.com/in/abhishek-yadav-636580201",
+            "insta": "https://instagram.com/aiabhishek_",
+            "mail": "mailto:ay22oct02@gmail.com"
+        }
+    ]
+}

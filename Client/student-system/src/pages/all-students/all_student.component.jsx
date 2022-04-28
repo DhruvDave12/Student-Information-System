@@ -25,27 +25,35 @@ const AllStudents = () => {
     }
 
     return (
-        <div className="all__students">
+        <div className="all-students">
             {
-                allStudents.length === 0 ? 
-                <h1>No Student Data</h1>
-                :
-                <div>
-                    {
-                        allStudents.map(student => (
-                            <div>
-                                <Link to={`/student/${student.student_id}`}>
-                                    <div className="particular_student" >
-                                        <p>{student.first_name}</p>
-                                        <p>{student.middle_name}</p>
-                                        <p>{student.last_name}</p>
+                allStudents.length === 0 ?
+                    <h1>No Student Data</h1>
+                    :
+
+                    <div className="all-students-outer">
+
+                        <div className="all-student-title">
+                            <p className="all-student-title">ALL STUDENTS</p>
+                        </div>
+
+                        <div className="all-students-inner">
+                            {
+                                allStudents.map(student => (
+                                    <div>
+                                        <Link to={`/student/${student.student_id}`}>
+                                            <div className="particular--student">
+                                                <p>{student.first_name}</p>
+                                                <p>{student.middle_name}</p>
+                                                <p>{student.last_name}</p>
+                                            </div>
+                                        </Link>
+                                        <Button onClickHandler={() => { handleDeleteStudent(student.student_id) }}>Delete</Button>
                                     </div>
-                                </Link>
-                                <Button onClickHandler={() => {handleDeleteStudent(student.student_id)}}>Delete</Button>
-                            </div>
-                        ))
-                    }
-                </div>
+                                ))
+                            }
+                        </div>
+                    </div>
             }
         </div>
     )

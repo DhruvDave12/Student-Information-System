@@ -1,0 +1,45 @@
+.faculty-profile {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faculty-profile-wrap {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.faculty-col-profile-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 14px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fname-div {
+    width: 30%;
+}
+
+.mname-div {
+    width: 25%;
+}
+
+.lname-div {
+    width: 30%;
+}
+
+.phone-div {
+    width: 45%;
+}
+
+.mail-div {
+    width: 45%;
+}

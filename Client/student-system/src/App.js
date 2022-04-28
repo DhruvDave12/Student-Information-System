@@ -18,6 +18,7 @@ import CurricularDataForm from './pages/curricular-dataform/curricular-data-form
 import CourseDataForm from './pages/courses-dataform/courses-data-form.component';
 import Courses from './pages/courses/courses.component';
 import AllFaculties from './pages/all-faculty/all_faculty.component';
+import Filters from './pages/filters/filters.component';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <NavBar />
       
       <Routes>
+
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
@@ -44,6 +46,8 @@ function App() {
         <Route path='/faculty/:id' element={<FacultyProfile />} />
         <Route path='/courses' element={<Courses />} />
         <Route path='/faculties/all' element={<AllFaculties />} />
+        <Route path='/filter' element={<Filters />} />
+
       </Routes>
 
     </div>

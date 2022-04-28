@@ -1,5 +1,38 @@
-.particular__faculty{
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 10px;
+.particular--faculty {
+    height: 48vh;
+    width: 15vw;
+    background-color: white;
+    border-radius: 15px;
+    /* box-shadow: 0px 0px 1px; */
+    border: 0.25px solid rgb(207, 201, 201);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: transform .5s;
+    align-items: center;
+}
+
+.all-faculties-outer {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-faculties-inner {
+    height: 70vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-faculty-title {
+    font-family: Inter-Regular;
+    font-size: 40px;
+    margin-top: 30px;
+    color: rgb(2, 2, 64);
 }

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import Form from "../../components/form/form.components";
+import './faculty_profile.styles.css';
 
 const FacultyProfile = () => {
     const param = useParams();
@@ -20,35 +22,51 @@ const FacultyProfile = () => {
         getFaculty();
         getFacultyCourseData();
     }, [])
-    
-    return (
-        faculty ? 
-        <div className="faculty__profile">
-            <p>{faculty.first_name}</p>
-            <p>{faculty.middle_name}</p>
-            <p>{faculty.last_name}</p>
-            <p>{faculty.contact}</p>
-            <p>{faculty.email}</p>
-            <br />
-            <br />
-            {
-                facultyCourses ?
-                <div>
-                    <p>{facultyCourses.course_id}</p>
-                    <p>{facultyCourses.credits}</p>
-                    <p>{facultyCourses.semester}</p>
-                </div>
-                :
-                <div>
-                    PADAO BC!!
-                </div>
-            }
 
-        </div>
-        :
-        <div className="faculty__profile">
-            Loading...
-        </div>
+    return (
+        faculty ?
+            <div className="faculty-profile">
+                <form className="faculty-profile-wrap">
+                    <div className="faculty-col-profile-wrap">
+                        <div className="fname-div">
+                            <Form label={"First Name"}
+                                value={faculty.first_name}
+                                type={"text"}
+                                name={"first"} />
+                        </div>
+                        <div className="mname-div">
+                            <Form label={"Middle Name"}
+                                type={"text"}
+                                value={faculty.middle_name}
+                                name={"middle"} />
+                        </div>
+                        <div className="lname-div">
+                            <Form label={"Last Name"}
+                                type={"text"}
+                                value={faculty.last_name}
+                                name={"last"} />
+                        </div>
+                    </div>
+                    <div className="faculty-col-form-wrap">
+                        <div className="mail-div">
+                            <Form label={"Faculty Id"}
+                                type={"number"}
+                                value={faculty.contact}
+                                name={"facId"} />
+                        </div>
+                        <div className="phone-div">
+                            <Form label={"Contact Number"}
+                                type={"number"}
+                                value={faculty.email}
+                                name={"contact"} />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            :
+            <div className="faculty__profile">
+                Loading...
+            </div>
     )
 }
 

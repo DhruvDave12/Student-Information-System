@@ -50,6 +50,7 @@ const AcademicsDataForm = () => {
                     <div className="cpi-div">
                         <Form label={"Current CPI"}
                             type={"number"}
+                            step={"any"}
                             name={"cpi"}
                             placeholder={"X.YZ"}
                             setterFunction={setCPI} />
@@ -57,6 +58,7 @@ const AcademicsDataForm = () => {
                     <div className="spi-div">
                         <Form label={"SPI"}
                             type={"number"}
+                            step={"any"}
                             name={"spi"}
                             placeholder={"X.YZ"}
                             setterFunction={setCurrentSPI} />

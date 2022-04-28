@@ -88,15 +88,15 @@ const StudentDataForm = () => {
                     </div>
                     <div className="major-div">
                         <Form label={"Major"}
-                            type={"dropdown"}
+                            type={"text"}
                             name={"major"}
                             placeholder={"CSE / IT"}
                             setterFunction={setMajor} />
                     </div>
                     <div className="batch-div">
                         <Form label={"Batch"}
-                            type={"number"}
-                            name={"bacth"}
+                            type={"text"}
+                            name={"batch"}
                             placeholder={"20XX - 20XX"}
                             setterFunction={setBatch} />
                     </div>

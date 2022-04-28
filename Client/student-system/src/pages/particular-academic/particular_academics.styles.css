@@ -1,0 +1,49 @@
+.particular-academic {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.particular-academic-wrap {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.particular-academic-col-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 14px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back-div {
+    width: 45%;
+}
+
+.id-div {
+    width: 45%;
+}
+
+.cpi-div {
+    width: 45%;
+}
+
+.spi-div {
+    width: 45%;
+}
+
+.particular-academic-btn {
+    width: 95%;
+    display: flex;
+    margin-top: 30px;
+    align-items: flex-end;
+    justify-content: flex-end;
+}

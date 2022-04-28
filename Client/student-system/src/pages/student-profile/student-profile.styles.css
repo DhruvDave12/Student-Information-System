@@ -1,0 +1,86 @@
+.student-profile {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-profile-wrap {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.student-col-profile-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 14px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fname-div {
+    width: 30%;
+}
+
+.mname-div {
+    width: 25%;
+}
+
+.lname-div {
+    width: 30%;
+}
+
+.phone-div {
+    width: 45%;
+}
+
+.mail-div {
+    width: 45%;
+}
+
+.dob-div {
+    width: 30%;
+}
+
+.major-div {
+    width: 28%;
+}
+
+.batch-div {
+    width: 28%;
+}
+
+.student-profile-edit-div {
+    width: 95%;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-other-input-div {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.edit-intern-btn {
+    width: 32%;
+}
+
+.edit-curricular-btn {
+    width: 32%;
+}
+
+.edit-academics-btn {
+    width: 32%;
+}

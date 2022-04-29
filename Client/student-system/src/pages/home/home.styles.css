@@ -11,13 +11,23 @@
     height: 100%;
     width: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.home-title p{
+.home-title-main{
     font-size: 32px;
     line-height: 60px;
+}
+.home-rdiagram{
+    font-size: 22px;
+    font-weight: bold;
+
+}
+.home-rdiagram a{
+    text-decoration: none;
+    color: rgba(37, 122, 240, 0.854);
 }
 
 .home-img{

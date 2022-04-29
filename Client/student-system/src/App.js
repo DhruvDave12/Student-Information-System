@@ -21,6 +21,7 @@ import Courses from './pages/courses/courses.component';
 import AllFaculties from './pages/all-faculty/all_faculty.component';
 import Filters from './pages/filters/filters.component';
 import FilterResults from './pages/filter-results/filter__results.component';
+import About from './pages/about/about.components';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/team' element={<Team />} />
+        <Route path='/about' element={<About />} />
         <Route path='/student-dataform' element={<StudentDataForm />} />
         <Route path='/faculty-dataform' element={<FacultyDataForm />} />
         <Route path='/academics-dataform' element={<AcademicsDataForm />} />

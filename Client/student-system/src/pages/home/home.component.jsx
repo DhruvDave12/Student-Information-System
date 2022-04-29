@@ -6,7 +6,8 @@ const Home = () => {
     return (
         <div className="home">
             <div className="home-title">
-                <p>WELCOME TO <br /> STUDENT INFORMATION SYSTEM</p>
+                <p className="home-title-main">WELCOME TO <br /> STUDENT INFORMATION SYSTEM</p> <br />
+                <p className="home-rdiagram">Check out our <a href="https://drive.google.com/file/d/10602uloEl0-dt1JyTfLAIqMxnmANvbhL/view">Relational Schema Diagram</a></p>
             </div>
             <div className="home-img">
                 <img src={HomeImg} alt="Home" />

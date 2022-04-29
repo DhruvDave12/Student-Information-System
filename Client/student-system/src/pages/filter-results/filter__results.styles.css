@@ -1,5 +1,67 @@
-.particular_data{
-    border: 2px solid black;
+.filter__results{
+    height: 90vh;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter__results__outer__wrap{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    row-gap: 1%;
+    align-items: center;
+}
+.filter__result__title{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.filter__result__title p{
+    font-size: 32px;
+    font-family: Inter-Light;
+}
+.filter__result__inner__wrap{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.indi_data{
+    width: 70%;
+    height: 15vh;
+    display: flex;
+    border: 0.25px solid rgb(202, 197, 197);
     border-radius: 10px;
-    padding: 10px;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+.indi__info{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.indi__info p{
+    font-family: Inter-Regular;
+    font-size: 16px;
+}
+.indi__btn{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

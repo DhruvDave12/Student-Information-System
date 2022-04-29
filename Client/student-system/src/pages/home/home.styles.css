@@ -7,28 +7,27 @@
     align-items: center;
 }
 
-.home-head {
-    width: 40%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home-head p {
-    font-size: 28px;
-    font-family: Inter-Regular;
-}
-
-.home-img {
-    height: 90vh;
+.home-title{
+    height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.home-img img {
-    width: 600px;
-    height: 600px;
+.home-title p{
+    font-size: 32px;
+    line-height: 60px;
+}
+
+.home-img{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    margin-right: 60px;
+}
+
+.home-img img{
+    height: 100%;
+    width: 100%;
 }

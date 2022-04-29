@@ -1,4 +1,78 @@
-.particular_student{
+.particular_student {
     border: 2px solid black;
     padding: 20px;
+}
+
+.all-students {
+    height: 90vh;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-student-outer-wrap {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-student-title {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-student-title p {
+    font-size: 32px;
+    font-family: Inter-Light;
+}
+
+.all-student-inner-wrap {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.indi-student {
+    width: 50%;
+    height: 15vh;
+    display: flex;
+    border: 0.25px solid rgb(202, 197, 197);
+    border-radius: 10px;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.indi-info{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.indi-info p{
+    font-family: Inter-Regular;
+    font-size: 16px;
+}
+
+.indi-btn{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

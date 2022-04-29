@@ -4,14 +4,15 @@ import FilterFaculty from "../../components/filter_components/faculty_filter/fil
 import CurricularFilter from "../../components/filter_components/curricular/curricular_filter.component";
 import AcademicFilter from "../../components/filter_components/academics/academics.component";
 import InternshipFilter from "../../components/filter_components/internship/internship.component";
+import Button from "../../components/button/button.component";
 
 const Filters = () => {
-    const [currCom, setCurrCom] = useState();
+  const [currCom, setCurrCom] = useState();
   const mapComponents = [
-    {component: <FilterFaculty />, title: "Faculty", id: 1},
-    {component: <CurricularFilter />, title: "Curricular", id: 2},
-    {component: <AcademicFilter />, title: "Academic", id: 3},
-    {component: <InternshipFilter />, title: "Internship", id: 4},
+    { component: <FilterFaculty />, title: "Faculty", id: 1 },
+    { component: <CurricularFilter />, title: "Curricular", id: 2 },
+    { component: <AcademicFilter />, title: "Academic", id: 3 },
+    { component: <InternshipFilter />, title: "Internship", id: 4 },
   ];
 
   const handleClick = (component) => {
@@ -19,22 +20,21 @@ const Filters = () => {
   }
   return (
     <div className="filters__page">
-      <h1>FILTERS PAGE</h1>
-      <div className="form__wrapper">
-        <div className="display__filter__form">
-            {
-                currCom ? currCom : <p>PLEASE CHOOSE A CATEGORY FROM BELOW</p>
-            }
-        </div>
+      <div className="display-filter-form">
+        <p className="filter-title">FILTERS PAGE</p>
+        {
+          currCom ? currCom : <p className="filter-subtitle">PLEASE CHOOSE A CATEGORY FROM BELOW</p>
+        }
       </div>
 
-      <div className="filter__scroller">
+      <div className="filter-scroller">
         {
-            mapComponents.map(item => (
-                <div className="particular__filter__title" onClick={() => {handleClick(item.component)}}>
-                    <p>{item.title}</p>
-                </div>
-            ))
+          mapComponents.map(item => (
+            <div className="particular__filter__title" onClick={() => { handleClick(item.component) }}>
+              {/* <p>{item.title}</p> */}
+              <Button>{item.title}</Button>
+            </div>
+          ))
         }
       </div>
     </div>

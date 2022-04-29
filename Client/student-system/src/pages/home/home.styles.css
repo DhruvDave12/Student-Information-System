@@ -17,7 +17,9 @@
 
 .home-title p{
     font-size: 32px;
-    line-height: 60px;
+    line-height: 50px;
+    font-family: Inter-Light;
+    font-weight: 900;
 }
 
 .home-img{

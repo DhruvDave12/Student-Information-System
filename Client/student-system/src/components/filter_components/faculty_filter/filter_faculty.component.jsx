@@ -21,38 +21,44 @@ const FilterFaculty = () => {
     // console.log(res.data.data);
     navigate('/filter/results', {
       state: {
-          data: res.data.data,
-          type: "faculty"
+        data: res.data.data,
+        type: "faculty"
       }
-  })
+    })
   };
 
   return (
-    <div className="filter__faculty">
-      <p>Select faculty on basis of: </p>
-      <form>
-        <Form
-          label={"Credits"}
-          name="credit"
-          placeholder={"Credits"}
-          type="text"
-          setterFunction={setCredits}
-        />
-        <Form
-          label={"Course Name"}
-          name="courseName"
-          placeholder={"Course Name"}
-          type="text"
-          setterFunction={setCourse}
-        />
-        <Form
-          label={"Semester"}
-          name="semester"
-          placeholder={"Semester"}
-          type="text"
-          setterFunction={setSemester}
-        />
-        <Button onClickHandler={handleSubmit}>FIND</Button>
+    <div className="filter-faculty">
+      <form className="faculty-filter-form-wrap">
+        <div className="filter-faculty-field">
+          <div className="single-field">
+            <Form
+              label={"Credits"}
+              name="credit"
+              placeholder={"Credits"}
+              type="text"
+              setterFunction={setCredits} />
+          </div>
+          <div className="single-field">
+            <Form
+              label={"Course Name"}
+              name="courseName"
+              placeholder={"Course Name"}
+              type="text"
+              setterFunction={setCourse} />
+          </div>
+          <div className="single-field">
+            <Form
+              label={"Semester"}
+              name="semester"
+              placeholder={"Semester"}
+              type="text"
+              setterFunction={setSemester} />
+          </div>
+        </div>
+        <div className="find-btn">
+          <Button onClickHandler={handleSubmit}>FIND</Button>
+        </div>
       </form>
     </div>
   );

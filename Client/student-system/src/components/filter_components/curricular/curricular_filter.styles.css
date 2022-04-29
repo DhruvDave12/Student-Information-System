@@ -1,0 +1,39 @@
+.filter-curricular{
+    height: 70vh;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.curricular-filter-form-wrap {
+    height: 90%;
+    width: 80%;
+    display: flex;
+    row-gap: 1%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.filter-curricular-field{
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.find-btn{
+    height: 20%;
+    width:96%;
+    margin: 40px;
+}
+
+.single-field{
+    width: 28%;
+}

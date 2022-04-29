@@ -45,25 +45,25 @@ const AcademicFilter = () => {
           setterFunction={setBacklog}
         />
         {/* <SelectDropDown setterFunction={setQuantityCPI} /> */}
-        
+
         <div className="select__container">
-        <div className="select_field">
-          <div className="select_form">
-            <label htmlFor="quantity" className="select_label">
-              CPI Quantity
-            </label>
-            <select
-              classname="select_input"
-              onChange={(e) => {
-                setQuantityCPI(e.target.value);
-              }}
-            >
-              <option value="equal">Equal To</option>
-              <option value="greater">Greater Than</option>
-              <option value="less">Less Than</option>
-            </select>
+          <div className="select_field">
+            <div className="select_form">
+              <label htmlFor="quantity" className="select_label">
+                CPI Quantity
+              </label>
+              <select
+                classname="select_input"
+                onChange={(e) => {
+                  setQuantityCPI(e.target.value);
+                }}
+              >
+                <option value="equal">Equal To</option>
+                <option value="greater">Greater Than</option>
+                <option value="less">Less Than</option>
+              </select>
+            </div>
           </div>
-        </div>
 
           <Form
             label={"CPI"}
@@ -73,25 +73,25 @@ const AcademicFilter = () => {
             setterFunction={setCPI}
           />
         </div>
-        
+
         <div className="select__container">
-        <div className="select_field">
-          <div className="select_form">
-            <label htmlFor="quantity" className="select_label">
-             SPI Quantity
-            </label>
-            <select
-              classname="select_input"
-              onChange={(e) => {
-                setQuantitySPI(e.target.value);
-              }}
-            >
-              <option value="equal">Equal To</option>
-              <option value="greater">Greater Than</option>
-              <option value="less">Less Than</option>
-            </select>
+          <div className="select_field">
+            <div className="select_form">
+              <label htmlFor="quantity" className="select_label">
+                SPI Quantity
+              </label>
+              <select
+                classname="select_input"
+                onChange={(e) => {
+                  setQuantitySPI(e.target.value);
+                }}
+              >
+                <option value="equal">Equal To</option>
+                <option value="greater">Greater Than</option>
+                <option value="less">Less Than</option>
+              </select>
+            </div>
           </div>
-        </div>
           <Form
             label={"SPI"}
             name="spi"

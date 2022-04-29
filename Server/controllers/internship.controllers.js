@@ -12,7 +12,6 @@ module.exports.postInternship = (req, res) => {
   const query = `INSERT INTO internship (company_name, position, duration, student_id) values (?, ?, ?, ?)`;
 
   connection.query (query, [company_name, position, duration, student_id], (err, rows, fields) => {
-    console.log(err);
     if (rows) {
       res.status(200).send ({
         success: true,

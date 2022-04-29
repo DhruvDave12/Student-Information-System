@@ -42,8 +42,34 @@ module.exports.postCurricularFilterData = (req,res) => {
 }
 
 module.exports.postAcademicsFilterData = (req,res) => {
-    const { backlog } = req.body;
-    const query = `select * from student where student_id in (select student_id from academics where backlog = "${backlog}")`;
+    var { backlog, cpi, spi, quantityCPI, quantitySPI} = req.body;
+    if(!backlog){
+        backlog = "null_backlog";
+    }
+    if(!cpi){
+        cpi = -1;
+    }
+    if(!spi){
+        spi = -1;
+    }
+
+    var sign1, sign2;
+    if(quantityCPI === "equal"){
+        sign1 = "=";
+    } else if(quantityCPI === "greater"){
+        sign1 = ">";
+    } else if (quantityCPI === "less"){
+        sign1 = "<";
+    }
+
+    if(quantitySPI === "equal"){
+        sign2 = "=";
+    } else if(quantitySPI === "greater"){
+        sign2 = ">";
+    } else if (quantitySPI === "less"){
+        sign2 = "<";
+    }
+    const query = `select * from student where student_id in (select student_id from academics where backlog = "${backlog}" or current_cpi ${sign1} ${cpi} or spi ${sign2} ${spi})`;
     connection.query(query, (err,rows,fields) => {
         if(rows){
             res.status(200).send({
@@ -61,11 +87,32 @@ module.exports.postAcademicsFilterData = (req,res) => {
 }
 
 module.exports.postInternshipFilterData = (req,res) => {
-    const { company, duration, position, cpi } = req.body;
+    var { company, duration, position, cpi, quantityCPI } = req.body;
 
-    const query = `select * from student where student_id in (select academics.student_id from academics inner join internship on academics.student_id = internship.student_id where internship.company_name = '${company}' or academics.current_cpi > ${cpi} or internship.duration = '${duration}' or internship.position = '${position}')`;
+    // Logic to handle any one
+    if(!company){
+        company = "null_company"
+    }
+    if(!duration){
+        duration = "null_duration"
+    }
+    if(!position){
+        position = "null_position"
+    }
+    if(!cpi){
+        cpi = -1
+    }
+
+    var sign3;
+    if(quantityCPI === "equal"){
+        sign3 = "=";
+    } else if(quantityCPI === "greater"){
+        sign3 = ">";
+    } else if(quantityCPI === "less"){
+        sign3 = "<";
+    }
+    const query = `select * from student where student_id in (select academics.student_id from academics inner join internship on academics.student_id = internship.student_id where internship.company_name = '${company}' or academics.current_cpi ${sign3} ${cpi} or internship.duration = '${duration}' or internship.position = '${position}')`;
     connection.query(query, (err,rows,fields) => {
-        console.log(err);
         if(rows){
             res.status(200).send({
                 success: true,

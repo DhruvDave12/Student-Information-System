@@ -37,13 +37,15 @@ const AcademicFilter = () => {
   return (
     <div className="academic__filter">
       <form>
-        <Form
-          label={"Backlog"}
-          name="backlog"
-          placeholder={"type YES or NO"}
-          type="text"
-          setterFunction={setBacklog}
-        />
+        <div className="first__field__academic">
+          <Form
+            label={"Backlog"}
+            name="backlog"
+            placeholder={"type YES or NO"}
+            type="text"
+            setterFunction={setBacklog}
+          />
+        </div>
         {/* <SelectDropDown setterFunction={setQuantityCPI} /> */}
 
         <div className="select__container">
@@ -64,14 +66,16 @@ const AcademicFilter = () => {
               </select>
             </div>
           </div>
-
-          <Form
-            label={"CPI"}
-            name="cpi"
-            placeholder={"9.00"}
-            type="text"
-            setterFunction={setCPI}
-          />
+          
+          <div className="cpi__field">
+            <Form
+              label={"CPI"}
+              name="cpi"
+              placeholder={"9.00"}
+              type="text"
+              setterFunction={setCPI}
+            />
+          </div>
         </div>
 
         <div className="select__container">
@@ -92,16 +96,19 @@ const AcademicFilter = () => {
               </select>
             </div>
           </div>
-          <Form
-            label={"SPI"}
-            name="spi"
-            placeholder={"9.10"}
-            type="text"
-            setterFunction={setSPI}
-          />
+          <div className="cpi__field">
+            <Form
+              label={"SPI"}
+              name="spi"
+              placeholder={"9.10"}
+              type="text"
+              setterFunction={setSPI}
+            />
+          </div>
         </div>
-
-        <Button onClickHandler={handleSubmit}>FIND</Button>
+        <div className="final__btn">
+          <Button onClickHandler={handleSubmit}>FIND</Button>
+        </div>
       </form>
     </div>
   );

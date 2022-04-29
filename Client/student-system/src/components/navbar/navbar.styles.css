@@ -22,11 +22,12 @@
 }
 
 .nav-wrap {
-    width: 35%;
+    width: 45%;
     display: flex;
     margin-right: 40px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-end;
+    text-decoration: none;
 }
 
 .link {
@@ -39,9 +40,18 @@ p {
     color: black;
 }
 
-.auth{
+.auth-out {
     display: flex;
-    width: 28%;
+    width: 22%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+
+.auth-in {
+    display: flex;
+    width: 25%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

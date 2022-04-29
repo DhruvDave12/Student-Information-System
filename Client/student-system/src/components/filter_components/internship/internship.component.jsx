@@ -51,13 +51,15 @@ const InternshipFilter = () => {
               type="text"
               setterFunction={setDuration} />
           </div>
+
           <div className="single-field">
             <Form
               label={"Position"}
               name="position"
               placeholder={"Position"}
               type="text"
-              setterFunction={setPosition} />
+              setterFunction={setPosition}
+            />
           </div>
         </div>
 
@@ -85,7 +87,8 @@ const InternshipFilter = () => {
               name="cpi"
               placeholder={"CPI"}
               type="text"
-              setterFunction={setCPI} />
+              setterFunction={setCPI}
+            />
           </div>
         </div>
         <div className="find-btn">

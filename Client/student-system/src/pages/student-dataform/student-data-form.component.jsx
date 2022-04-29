@@ -37,6 +37,7 @@ const StudentDataForm = () => {
         })
         localStorage.setItem('id', res.data.userData.student_id);
         navigate(`/student/${studentID}`);
+        window.location.reload(false);
     }
 
     return (

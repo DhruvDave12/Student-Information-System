@@ -3,12 +3,13 @@ import "./filter_faculty.styles.css";
 import Form from "../../form/form.components";
 import axios from "axios";
 import Button from "../../button/button.component";
-
+import { useNavigate } from "react-router-dom";
 const FilterFaculty = () => {
+  const navigate = useNavigate();
   const [credit, setCredits] = useState("");
   const [semester, setSemester] = useState("");
   const [course, setCourse] = useState("");
-  const [faculty, setFaculty] = useState([]);
+  // const [faculty, setFaculty] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +18,13 @@ const FilterFaculty = () => {
       semester,
       course,
     });
-    console.log(res.data.data);
+    // console.log(res.data.data);
+    navigate('/filter/results', {
+      state: {
+          data: res.data.data,
+          type: "faculty"
+      }
+  })
   };
 
   return (

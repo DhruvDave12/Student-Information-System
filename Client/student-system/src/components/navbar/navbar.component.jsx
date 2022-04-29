@@ -28,7 +28,7 @@ const NavBar = () => {
     }
     return (
     <div className="navbar">
-      <div className="name-logo">
+      <div className="name-logo" style={{cursor: "pointer"}} onClick={() => {navigate('/')}}>
         <img src={logo} alt="StudentInfoSys" />
       </div>
       <nav className="nav-wrap">

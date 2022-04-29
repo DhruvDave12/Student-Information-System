@@ -30,6 +30,7 @@ const FacultyDataForm = () => {
         })
         localStorage.setItem('id', res.data.data.faculty_id);
         navigate(`/faculty/${facultyID}`);
+        window.location.reload(false);
     }
 
     return (

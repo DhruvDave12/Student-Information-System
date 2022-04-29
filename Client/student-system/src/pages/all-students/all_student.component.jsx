@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import "./all_student.styles.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "../../components/button/button.component";
 import { useNavigate } from "react-router-dom";
 

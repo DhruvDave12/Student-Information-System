@@ -1,38 +1,85 @@
-.particular--faculty {
-    height: 48vh;
-    width: 15vw;
-    background-color: white;
-    border-radius: 15px;
-    /* box-shadow: 0px 0px 1px; */
-    border: 0.25px solid rgb(207, 201, 201);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    transition: transform .5s;
-    align-items: center;
-}
-
-.all-faculties-outer {
+.all-faculties {
     height: 90vh;
-    width: 100vw;
+    width: 100%;
+    overflow-y: auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.all-faculties-inner {
-    height: 70vh;
-    width: 90vw;
+.all-faculty-outer-wrap {
+    height: 100%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
 .all-faculty-title {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.all-faculty-title p {
+    font-size: 32px;
+    font-family: Inter-Light;
+}
+
+.all-faculty-inner-wrap {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.indi-faculty {
+    width: 70%;
+    height: 15vh;
+    display: flex;
+    border: 0.25px solid rgb(202, 197, 197);
+    border-radius: 10px;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.indi-faculty-info {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.indi-faculty-info p {
     font-family: Inter-Regular;
-    font-size: 40px;
-    margin-top: 30px;
-    color: rgb(2, 2, 64);
+    font-size: 16px;
+}
+
+/* .indi-faculty-btn {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indi-btn1 .btn {
+    background-color: red;
+} */
+
+.indi-faculty-btn {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

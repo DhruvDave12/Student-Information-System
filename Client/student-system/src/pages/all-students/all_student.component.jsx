@@ -24,38 +24,12 @@ const AllStudents = () => {
         window.location.reload(false);
     }
 
+    const handleViewStudent = async (id) => {
+        navigate(`/student/${id}`);
+        window.location.reload(false);
+    }
+
     return (
-        // <div className="all-students">
-        //     {
-        //         allStudents.length === 0 ?
-        //             <h1>No Student Data</h1>
-        //             :
-
-        //             <div className="all-students-outer">
-
-        //                 <div className="all-student-title">
-        //                     <p className="all-student-title">ALL STUDENTS</p>
-        //                 </div>
-
-        //                 <div className="all-students-inner">
-        //                     {
-        //                         allStudents.map(student => (
-        //                             <div>
-        //                                 <Link to={`/student/${student.student_id}`}>
-        //                                     <div className="particular--student">
-        //                                         <p>{student.first_name}</p>
-        //                                         <p>{student.middle_name}</p>
-        //                                         <p>{student.last_name}</p>
-        //                                     </div>
-        //                                 </Link>
-        //                                 <Button onClickHandler={() => { handleDeleteStudent(student.student_id) }}>Delete</Button>
-        //                             </div>
-        //                         ))
-        //                     }
-        //                 </div>
-        //             </div>
-        //     }
-        // </div>
         <div className="all-students">
             {
                 allStudents.length === 0
@@ -71,11 +45,12 @@ const AllStudents = () => {
                                 allStudents.map(student => (
                                     <div className="indi-student">
                                         <div className="indi-info">
-                                            <Link to={`/student/${student.student_id}`} className="link">
-                                                <p>{student.first_name} {student.middle_name} {student.last_name}</p>
-                                            </Link>
+                                            <p>{student.first_name} {student.middle_name} {student.last_name}</p>
                                         </div>
-                                        <div className="indi-btn">
+                                        <div className="indi-btn2">
+                                            <Button onClickHandler={() => { handleViewStudent(student.student_id) }}>View</Button>
+                                        </div>
+                                        <div className="indi-btn1">
                                             <Button onClickHandler={() => { handleDeleteStudent(student.student_id) }}>Delete</Button>
                                         </div>
                                     </div>

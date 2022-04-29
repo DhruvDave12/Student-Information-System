@@ -45,18 +45,18 @@
 }
 
 .indi-student {
-    width: 50%;
+    width: 70%;
     height: 15vh;
     display: flex;
     border: 0.25px solid rgb(202, 197, 197);
     border-radius: 10px;
     flex-direction: row;
     margin-bottom: 40px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
-.indi-info{
+.indi-info {
     width: 40%;
     height: 100%;
     display: flex;
@@ -64,15 +64,28 @@
     align-items: center;
 }
 
-.indi-info p{
+.indi-info p {
     font-family: Inter-Regular;
     font-size: 16px;
 }
 
-.indi-btn{
-    width: 40%;
+.indi-btn1 {
+    width: 20%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.indi-btn1 .btn {
+    background-color: red;
+}
+
+.indi-btn2 {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

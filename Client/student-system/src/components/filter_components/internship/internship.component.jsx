@@ -5,6 +5,7 @@ import axios from "axios";
 import Form from "../../form/form.components";
 import Button from "../../button/button.component";
 import { useNavigate } from "react-router-dom";
+
 const InternshipFilter = () => {
   const navigate = useNavigate();
   const [company, setCompany] = useState("");
@@ -31,34 +32,39 @@ const InternshipFilter = () => {
     });
   };
   return (
-    <div className="internship__filter">
-      <form>
-        <Form
-          label={"Company Name"}
-          name="companyName"
-          placeholder={"Company Name"}
-          type="text"
-          setterFunction={setCompany}
-        />
+    <div className="filter-internship">
+      <form className="internship-filter-form-wrap">
+        <div className="filter-internship-field">
+          <div className="single-field">
+            <Form
+              label={"Company Name"}
+              name="companyName"
+              placeholder={"Company Name"}
+              type="text"
+              setterFunction={setCompany} />
+          </div>
+          <div className="single-field">
+            <Form
+              label={"Duration"}
+              name="duration"
+              placeholder={"Duration"}
+              type="text"
+              setterFunction={setDuration} />
+          </div>
 
-        <Form
-          label={"Duration"}
-          name="duration"
-          placeholder={"Duration"}
-          type="text"
-          setterFunction={setDuration}
-        />
+          <div className="single-field">
+            <Form
+              label={"Position"}
+              name="position"
+              placeholder={"Position"}
+              type="text"
+              setterFunction={setPosition}
+            />
+          </div>
+        </div>
 
-        <Form
-          label={"Position"}
-          name="position"
-          placeholder={"Position"}
-          type="text"
-          setterFunction={setPosition}
-        />
-
-        <div className="select__container">
-          <div className="select_field">
+        <div className="select-container">
+          <div className="select-field">
             <div className="select_form">
               <label htmlFor="quantity" className="select_label">
                 CPI Quantity
@@ -75,15 +81,19 @@ const InternshipFilter = () => {
               </select>
             </div>
           </div>
-          <Form
-            label={"CPI"}
-            name="cpi"
-            placeholder={"CPI"}
-            type="text"
-            setterFunction={setCPI}
-          />
+          <div className="single-field-01">
+            <Form
+              label={"CPI"}
+              name="cpi"
+              placeholder={"CPI"}
+              type="text"
+              setterFunction={setCPI}
+            />
+          </div>
         </div>
-        <Button onClickHandler={handleSubmit}>FIND</Button>
+        <div className="find-btn">
+          <Button onClickHandler={handleSubmit}>FIND</Button>
+        </div>
       </form>
     </div>
   );

@@ -20,12 +20,12 @@ import EditStudentPage from './pages/edit-student/edit_student.component';
 import Courses from './pages/courses/courses.component';
 import AllFaculties from './pages/all-faculty/all_faculty.component';
 import Filters from './pages/filters/filters.component';
+import FilterResults from './pages/filter-results/filter__results.component';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-
       <Routes>
 
         <Route path='/' element={<Home />} />
@@ -47,9 +47,9 @@ function App() {
         <Route path='/courses' element={<Courses />} />
         <Route path='/faculties/all' element={<AllFaculties />} />
         <Route path='/filter' element={<Filters />} />
+        <Route path='/filter/results' element={<FilterResults />} />
 
       </Routes>
-
     </div>
   );
 }

@@ -62,9 +62,14 @@ const ParticularAcademic = () => {
                                 value={academic.spi} />
                         </div>
                     </div>
-                    <div className="particular-academic-btn">
-                        <Button onClickHandler={handleClick}>Edit Academics</Button>
-                    </div>
+                    {
+                        typeOfUser === "faculty" ?
+                        <div className="particular-academic-btn">
+                            <Button onClickHandler={handleClick}>Edit Academics</Button>
+                        </div>
+                        :
+                        ""
+                    }
                 </form>
             </div>
             :

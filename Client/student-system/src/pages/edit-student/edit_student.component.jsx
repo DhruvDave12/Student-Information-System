@@ -3,7 +3,6 @@ import "./edit-student.styles.css";
 import { useLocation } from "react-router-dom";
 import Button from "../../components/button/button.component";
 import Form from "../../components/form/form.components";
-import EditForm from "../../components/editInputContainer/editInputContainer.component";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -33,13 +32,12 @@ const EditStudentPage = () => {
       batch: batch,
       email: state.student.email
     })
-    console.log(res);
     navigate(`/student/${state.student.student_id}`);
   };
   return (
     <div className="edit-student">
       <form className="edit-student-wrap">
-        <p className="student-heading">STUDENT DETAILS AS REQUIRED FOR THE DATABASE</p>
+        <p className="student-heading">EDIT STUDENT (PERSONAL) DETAILS</p>
         <div className="student-col-edit">
           <div className="fname-div">
             <Form label={"First Name"}

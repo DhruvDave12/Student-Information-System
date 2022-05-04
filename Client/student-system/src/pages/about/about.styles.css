@@ -14,14 +14,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 20px;
 }
 
 .info {
     font-size: 18px;
-    font-family: Inter-Light;
+    font-family: Inter-Regular;
     text-align: justify;
     margin: 20px;
-    font-weight: 800;
 }
 
 .title {
